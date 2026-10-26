@@ -1,0 +1,137 @@
+<div align="center">
+
+<img src="docs/icon.png" width="128" alt="HDRI kit app icon">
+
+# HDRI kit
+
+**Stitch a pile of photos into a 360° HDRI — on your Mac.**
+
+[![Platform](https://img.shields.io/badge/platform-macOS%2027-blue)](#requirements)
+[![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-arm64-lightgrey)](#requirements)
+[![Status](https://img.shields.io/badge/status-beta-orange)](#beta-software)
+[![License](https://img.shields.io/badge/license-freeware-green)](LICENSE)
+
+[**Download the latest DMG →**](../../releases/latest) · [Русская версия](README.ru.md)
+
+</div>
+
+---
+
+## Beta software
+
+**HDRI kit is in public beta.** It works, I use it, but it is young: expect rough edges, the occasional failed stitch, and features that are still on the roadmap. It will keep **improving and updating** as I use it and as people send feedback. If something goes wrong, please [open an issue](../../issues) — beta feedback is the most useful thing you can give this project.
+
+---
+
+## What is it?
+
+HDRI kit turns an ordinary set of photos — shot with a phone, an ultra‑wide lens, a mirrorless camera, handheld or on a tripod — into a full **360° × 180° equirectangular panorama** you can use as an HDRI for lighting and backgrounds in Blender, Houdini, Unreal, Unity, Nuke, Maya and anything else that eats `.exr` or `.hdr`.
+
+You drop in the photos, pick a speed, press **Stitch Panorama**. That's it. No control points, no project files to babysit.
+
+It is built natively for the Mac: SwiftUI with Liquid Glass, Metal for rendering, OpenCV for registration.
+
+## Features
+
+**Stitching that tolerates real‑world shooting**
+- Any order, any camera, any mix of lenses. Fisheye is recognised from the lens name.
+- A cascade that spends effort only where it's needed: a quick pass at ~1 MP, then a higher‑resolution pass only for the frames that didn't attach, then the phone's gravity and compass sensors as a last resort.
+- Sensors are used as hints, not trusted blindly. Gravity (reliable) and compass heading (often not) are estimated separately, and the horizon is levelled by gravity.
+- The focal length from EXIF is refined as part of the solve, because ultra‑wide cameras are often a few percent off — a common cause of panoramas that don't close.
+
+**Real HDR, not tone‑mapped fakes**
+- Exposure brackets can be shot *however you like*: handheld, shuffled, with no fixed pattern. Frames of the same position are grouped into stacks automatically (by capture time, image content and sensors).
+- Linear half‑float pipeline. RAW files are decoded linearly; HEIC with a gain map is expanded to HDR. Per‑frame exposure comes from EXIF and is refined from overlaps.
+- Weighted multi‑band blending: soft low frequencies, sharp detail, no clipping at export.
+
+**A quality switch**
+- **Fast** — quick sanity check of a shoot.
+- **Balanced** — the sensible default.
+- **Maximum** — more points, all pairs, higher resolution. Slower, catches almost everything.
+
+**Look, check, fix**
+- Flat and sphere preview with zoom and pan. Double‑click anywhere to select the frame that covers that spot.
+- Frame list grouped by *All / Positions / Exposures*, with EV badges and photo metadata.
+- Nudge any frame by hand (yaw / pitch / roll — a stack moves together), hide it, or delete it and restitch.
+- View‑only grading for inspection: exposure, contrast, highlights, shadows, gamma, temperature, tint, saturation, histogram, clipped‑pixel overlay and false colour (stops). It never affects the export.
+
+**Export**
+- Formats: **OpenEXR**, **Radiance HDR**, **16‑bit PNG**.
+- Sizes from 2K to 16K (always 2:1).
+- Colour spaces: Linear Rec.709, ACEScg, Linear Display P3, sRGB, Display P3.
+
+**Projects**
+- Every stitch is saved automatically with its frames and your manual adjustments.
+- Choose whether a project keeps *copies* of the photos (always reopens) or just *links* to the originals (uses almost no disk space).
+
+**And**
+- English and Russian interface (Settings → Language).
+- Runs fully offline. No accounts, no analytics, no network code.
+
+## Requirements
+
+- **macOS 27** on an **Apple Silicon** Mac.
+- Plenty of RAM helps with big sets and 8K/16K exports.
+
+## Install
+
+1. Download **`HDRI kit.dmg`** from the [latest release](../../releases/latest).
+2. Open it and drag **HDRI kit** to **Applications**.
+3. **First launch:** the beta is not yet notarized by Apple (that needs a paid developer account), so macOS will refuse to open it the first time. This is expected. To allow it:
+   - Try to open the app once, then close the warning.
+   - Open **System Settings → Privacy & Security**, scroll down and click **Open Anyway** next to *“HDRI kit” was blocked*.
+   - Confirm with your password. You only have to do this once.
+
+   Prefer the Terminal? This does the same thing:
+   ```sh
+   xattr -dr com.apple.quarantine "/Applications/HDRI kit.app"
+   ```
+
+## Quick start
+
+1. Open **Create**, click **+** (or drag your photos in).
+2. Choose **Fast / Balanced / Maximum**.
+3. Press **Stitch Panorama**.
+4. Check the result in the flat or sphere view; fix or hide frames if needed.
+5. Press **Export…**, choose format, size and colour space.
+
+**Shooting tips.** Overlap neighbouring frames by roughly a third. Shoot the whole sphere including sky and floor. Rotate around the camera rather than walking around it — the closer objects are, the more parallax shows up as ghosting. A tripod isn't required, but it helps. For HDR, bracket however you like; the app will sort it out.
+
+## Known limitations (beta)
+
+- **Parallax ghosting.** Objects very close to the camera (a chandelier, a nearby branch) can double where frames overlap. There is no seam‑finding stage yet.
+- **Featureless areas.** Plain skies, white walls and water give the matcher little to hold on to. Such frames may be placed only from sensor data (and are marked as such) or left out.
+- **Lens handling.** Fisheye is detected by lens name only; there is no manual lens selection and no lens‑distortion model yet.
+- **Tested mostly on iPhone HEIC** sets. Other cameras should work but have seen less testing.
+- **Old projects** made with early internal builds should be restitched.
+- **Unsigned build** — see the install notes above.
+
+## Roadmap
+
+- Seam finding for parallax ghosting.
+- Neural feature matching for the *Maximum* mode (Core ML).
+- Manual lens selection and distortion in the solve.
+- Notarized, signed releases and, possibly, a Mac App Store release.
+- Possibly an iPad/iPhone version (the UI code is cross‑platform SwiftUI, but only macOS is tested today).
+
+Ideas and priorities are welcome in [Issues](../../issues).
+
+## Feedback
+
+Found a bug or have a shoot that won't stitch? [Open an issue](../../issues) and include:
+- your macOS version and Mac model;
+- the camera / phone and lens, and how many photos;
+- the quality mode you used;
+- a screenshot of the result, if it's wrong.
+
+Please don't attach photos you wouldn't want public.
+
+## Credits
+
+- [OpenCV](https://opencv.org) (Apache‑2.0) — see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## License
+
+Free to use under the [HDRI kit License](LICENSE) — all rights reserved, source code is not published. Third-party components: see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+<sub>From Russia with love ♥</sub>
