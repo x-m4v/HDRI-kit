@@ -11,7 +11,7 @@
 [![Status](https://img.shields.io/badge/status-beta-orange)](#beta-software)
 [![License](https://img.shields.io/badge/license-freeware-green)](LICENSE)
 
-[**Download the latest DMG →**](../../releases/latest) · [Русская версия](README.ru.md)
+[**Download the latest DMG**](../../releases/latest) · [Русская версия](README.ru.md)
 
 </div>
 
