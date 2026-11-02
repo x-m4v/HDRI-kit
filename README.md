@@ -31,6 +31,41 @@ You drop in the photos, pick a speed, press **Stitch Panorama**. That's it. No c
 
 It is built natively for the Mac: SwiftUI with Liquid Glass, Metal for rendering, OpenCV for registration.
 
+## Requirements
+
+- **macOS 27** on an **Apple Silicon** Mac.
+- 16 GB of RAM or more is comfortable; the app keeps its frames within about a quarter of your Mac's memory.
+
+## Install
+
+1. Download **`HDRI kit.dmg`** from the [latest release](../../releases/latest).
+2. Open it and drag **HDRI kit** to **Applications**.
+3. **First launch:** the beta is not yet notarized by Apple (that needs a paid developer account), so macOS will refuse to open it the first time. This is expected. To allow it:
+   - Try to open the app once, then close the warning.
+   - Open **System Settings → Privacy & Security**, scroll down and click **Open Anyway** next to *“HDRI kit” was blocked*.
+   - Confirm with your password. You only have to do this once.
+
+   Prefer the Terminal? This does the same thing:
+   ```sh
+   xattr -dr com.apple.quarantine "/Applications/HDRI kit.app"
+   ```
+
+## Quick start
+
+1. Open **Create**, click **+** (or drag your photos in).
+2. Choose **Fast / Balanced / Maximum**.
+3. Press **Stitch Panorama**.
+4. Check the result in the flat or sphere view; fix or hide frames if needed.
+5. Press **Export…**, choose format, size and colour space.
+
+**Shooting tips.** Overlap neighbouring frames by roughly a third. Shoot the whole sphere including sky and floor. Rotate around the camera rather than walking around it — the closer objects are, the more parallax shows up as ghosting. A tripod isn't required, but it helps. For HDR, bracket however you like; the app will sort it out. **Shoot RAW (ProRAW) for HDRI:** iPhone HEIC is tone‑mapped differently in every frame.
+
+## Support the project
+
+HDRI kit is free and will stay free. If it saves you time, you can support development on Boosty — it goes straight into new features and, eventually, a notarized build and the Mac App Store.
+
+[**Support on Boosty →**](https://boosty.to/m4v/donate)
+
 ## Features
 
 **Stitching that tolerates real‑world shooting**
@@ -79,63 +114,6 @@ It is built natively for the Mac: SwiftUI with Liquid Glass, Metal for rendering
 **And**
 - English and Russian interface (Settings → Language), accent colour (Settings → Appearance).
 - Runs fully offline. No accounts, no analytics, no network code.
-
-## Requirements
-
-- **macOS 27** on an **Apple Silicon** Mac.
-- 16 GB of RAM or more is comfortable; the app keeps its frames within about a quarter of your Mac's memory.
-
-## Install
-
-1. Download **`HDRI kit.dmg`** from the [latest release](../../releases/latest).
-2. Open it and drag **HDRI kit** to **Applications**.
-3. **First launch:** the beta is not yet notarized by Apple (that needs a paid developer account), so macOS will refuse to open it the first time. This is expected. To allow it:
-   - Try to open the app once, then close the warning.
-   - Open **System Settings → Privacy & Security**, scroll down and click **Open Anyway** next to *“HDRI kit” was blocked*.
-   - Confirm with your password. You only have to do this once.
-
-   Prefer the Terminal? This does the same thing:
-   ```sh
-   xattr -dr com.apple.quarantine "/Applications/HDRI kit.app"
-   ```
-
-## Quick start
-
-1. Open **Create**, click **+** (or drag your photos in).
-2. Choose **Fast / Balanced / Maximum**.
-3. Press **Stitch Panorama**.
-4. Check the result in the flat or sphere view; fix or hide frames if needed.
-5. Press **Export…**, choose format, size and colour space.
-
-**Shooting tips.** Overlap neighbouring frames by roughly a third. Shoot the whole sphere including sky and floor. Rotate around the camera rather than walking around it — the closer objects are, the more parallax shows up as ghosting. A tripod isn't required, but it helps. For HDR, bracket however you like; the app will sort it out. **Shoot RAW (ProRAW) for HDRI:** iPhone HEIC is tone‑mapped differently in every frame.
-
-## Support the project
-
-HDRI kit is free and will stay free. If it saves you time, you can support development on Boosty — it goes straight into new features and, eventually, a notarized build and the Mac App Store.
-
-[**Support on Boosty →**](https://boosty.to/m4v/donate)
-
-## Known limitations (beta)
-
-- **Parallax.** Objects very close to the camera when shooting handheld (a pole a couple of metres away, a chandelier) can show a small step where frames meet. Rotation can't fix parallax; remove it with the Exclude brush if needed.
-- **Featureless areas.** Plain skies, white walls and water give the matcher little to hold on to. Such frames may be placed only from sensor data (they then only fill what nothing else captured) or left out.
-- **iPhone HEIC** is tone‑mapped per frame, so its tones may not match perfectly; RAW gives the cleanest HDRI.
-- **No automatic tripod detection** — the nadir fill uses a circle of the radius you set.
-- **Lens handling.** Fisheye is detected by lens name only; there is no manual lens selection and no lens‑distortion model yet.
-- **Tested mostly on iPhone** (ProRAW DNG and HEIC). Other cameras should work but have seen less testing.
-- **Old projects** made with early internal builds should be restitched.
-- **Unsigned build** — see the install notes above.
-
-## Roadmap
-
-- Better seams around close objects with parallax.
-- The sun as an entity: position, `sun.json`, a version without the sun; absolute light calibration.
-- Neural feature matching for the *Maximum* mode (Core ML).
-- Manual lens selection and distortion in the solve.
-- Notarized, signed releases and, possibly, a Mac App Store release.
-- Possibly an iPad/iPhone version (the UI code is cross‑platform SwiftUI, but only macOS is tested today).
-
-Ideas and priorities are welcome in [Issues](../../issues).
 
 ## Feedback
 
