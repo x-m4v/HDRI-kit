@@ -11,7 +11,7 @@
 [![Status](https://img.shields.io/badge/status-beta-orange)](#beta-software)
 [![License](https://img.shields.io/badge/license-freeware-green)](LICENSE)
 
-[**Download the latest DMG**](../../releases/latest) · [Русская версия](README.ru.md)
+[**Download the latest DMG**](https://github.com/x-m4v/HDRI-kit/releases/download/v0.4.0-beta/HDRI.kit.dmg) · [Русская версия](README.ru.md)
 
 </div>
 
@@ -31,6 +31,12 @@ You drop in the photos, pick a speed, press **Stitch Panorama**. That's it. No c
 
 It is built natively for the Mac: SwiftUI with Liquid Glass, Metal for rendering, OpenCV for registration.
 
+## New in 0.4.0 beta
+
+Project recovery copies before restitching, missing-photo relinking, cache management, Auto Proxy, an editor that adapts to smaller windows, and improved registration of difficult frames.
+
+[Read the full release notes](https://github.com/x-m4v/HDRI-kit/releases/tag/v0.4.0-beta).
+
 ## Requirements
 
 - **macOS 27** on an **Apple Silicon** Mac.
@@ -38,7 +44,7 @@ It is built natively for the Mac: SwiftUI with Liquid Glass, Metal for rendering
 
 ## Install
 
-1. Download **`HDRI kit.dmg`** from the [latest release](../../releases/latest).
+1. Download **`HDRI kit.dmg`** from the [latest release](https://github.com/x-m4v/HDRI-kit/releases/download/v0.4.0-beta/HDRI.kit.dmg).
 2. Open it and drag **HDRI kit** to **Applications**.
 3. **First launch:** the beta is not yet notarized by Apple (that needs a paid developer account), so macOS will refuse to open it the first time. This is expected. To allow it:
    - Try to open the app once, then close the warning.
