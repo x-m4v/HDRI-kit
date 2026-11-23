@@ -11,9 +11,13 @@
 [![Статус](https://img.shields.io/badge/статус-бета-orange)](#бета-версия)
 [![Лицензия](https://img.shields.io/badge/лицензия-бесплатно-green)](LICENSE)
 
-[**Скачать последний DMG →**](https://github.com/x-m4v/HDRI-kit/releases/download/v0.5.0-beta/HDRI.kit.dmg) · [English](README.md)
+[**Скачать последний DMG →**](https://github.com/x-m4v/HDRI-kit/releases/download/v0.5.1-beta/HDRI.kit.dmg) · [English](README.md)
 
 </div>
+
+## Новое в 0.5.1 beta
+
+Интерактивное руководство теперь открывается прямо в настройках. Русская и английская версии доступны офлайн. [Полное описание релиза](https://github.com/x-m4v/HDRI-kit/releases/tag/v0.5.1-beta).
 
 ## Бета-версия
 
@@ -37,7 +41,7 @@ Mac на Apple Silicon с macOS 27. Рекомендуется от 16 ГБ па
 2. Выберите «Быстро» для проверки покрытия или оставьте «Максимум» для итоговой сшивки. Нажмите «Сшить панораму».
 3. Проверьте стыки в редакторе и экспортируйте EXR, HDR или PNG.
 
-[Все возможности](FEATURES.ru.md) · [Руководство пользователя (HTML)](https://github.com/x-m4v/HDRI-kit/releases/download/v0.5.0-beta/HDRI-kit-RU.html) · [Поддержать проект на Boosty](https://boosty.to/m4v/donate)
+[Все возможности](FEATURES.ru.md) · [Руководство пользователя (HTML)](https://x-m4v.github.io/HDRI-kit/manual/HDRI-kit-RU.html) · [Поддержать проект на Boosty](https://boosty.to/m4v/donate)
 
 ## Обратная связь
 
