@@ -41,7 +41,13 @@ Open the DMG and drag HDRI kit to Applications. If macOS blocks the beta on firs
 2. Pick **Fast** to check coverage or leave **Maximum** selected for the final stitch. Click **Stitch Panorama**.
 3. Inspect the seams in the editor and export EXR, HDR or PNG.
 
-[All features](FEATURES.md) · [User manual (HTML)](https://x-m4v.github.io/HDRI-kit/manual/HDRI-kit-EN.html) · [Support the project on Boosty](https://boosty.to/m4v/donate)
+[All features](FEATURES.md) · [User manual (HTML)](https://x-m4v.github.io/HDRI-kit/manual/HDRI-kit-EN.html)
+
+## Support the project
+
+HDRI kit is free to use. If you’d like to support its development, you can do so on Boosty.
+
+[![Support on Boosty](https://img.shields.io/badge/Support%20on%20Boosty-5B4BB7)](https://boosty.to/m4v)
 
 ## Feedback
 

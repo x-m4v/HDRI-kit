@@ -41,7 +41,13 @@ Mac на Apple Silicon с macOS 27. Рекомендуется от 16 ГБ па
 2. Выберите «Быстро» для проверки покрытия или оставьте «Максимум» для итоговой сшивки. Нажмите «Сшить панораму».
 3. Проверьте стыки в редакторе и экспортируйте EXR, HDR или PNG.
 
-[Все возможности](FEATURES.ru.md) · [Руководство пользователя (HTML)](https://x-m4v.github.io/HDRI-kit/manual/HDRI-kit-RU.html) · [Поддержать проект на Boosty](https://boosty.to/m4v/donate)
+[Все возможности](FEATURES.ru.md) · [Руководство пользователя (HTML)](https://x-m4v.github.io/HDRI-kit/manual/HDRI-kit-RU.html)
+
+## Поддержать проект
+
+HDRI kit бесплатен. Если вам хочется поддержать его разработку, это можно сделать на Boosty.
+
+[![Поддержать на Boosty](https://img.shields.io/badge/%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%20Boosty-5B4BB7)](https://boosty.to/m4v)
 
 ## Обратная связь
 
