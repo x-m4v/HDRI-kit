@@ -11,21 +11,17 @@
 [![Status](https://img.shields.io/badge/status-beta-orange)](#beta-software)
 [![License](https://img.shields.io/badge/license-freeware-green)](LICENSE)
 
-[**Download the latest DMG**](https://github.com/x-m4v/HDRI-kit/releases/download/v0.5.1-beta/HDRI.kit.dmg) · [Русская версия](README.ru.md)
+[**Download the latest DMG**](https://github.com/x-m4v/HDRI-kit/releases/download/v0.6.0-beta/HDRI.kit.dmg) · [Русская версия](README.ru.md)
 
 </div>
 
-## New in 0.5.1 beta
+## New in 0.6.0 beta
 
-Read the interactive user manual offline in Settings. Choose English or Русский. [Read the full release notes](https://github.com/x-m4v/HDRI-kit/releases/tag/v0.5.1-beta).
+Stitching is faster and uses less memory. Frames with missing focal-length metadata are aligned by image content, and Maximum mode refines matches to subpixel precision. The update also adds a live progress counter and cache controls, and reduces memory use for Radiance HDR export. [Read the full release notes](https://github.com/x-m4v/HDRI-kit/releases/tag/v0.6.0-beta).
 
 ## Beta software
 
 HDRI kit turns overlapping photos into a 360° × 180° panorama for lighting and backgrounds in 3D. This public beta can struggle with difficult overlaps.
-
-## New in 0.5.0 beta
-
-A new app icon, a configurable tab bar and two stitch modes. [Read the full release notes](https://github.com/x-m4v/HDRI-kit/releases/tag/v0.5.0-beta).
 
 ## Requirements
 
